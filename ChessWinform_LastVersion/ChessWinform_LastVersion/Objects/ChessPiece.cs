@@ -8,16 +8,6 @@ using System.Windows.Forms;
 
 namespace Chess.Objects
 {
-    public enum PieceEnums
-    {
-        Empty, Pawn, Bishop, Knight, Rook, Queen, King
-    }
-
-    public enum PositionEnums
-    {
-        Top, Bottom
-    }
-
     public class ChessPiece : PictureBox
     {
         private Point _pieceLocation;
@@ -99,6 +89,17 @@ namespace Chess.Objects
                 BackgroundImage = Image.FromFile(folderPath + PieceType.ToString() + ".png");
             }
             BackColor = PieceBackColor;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pieceType"></param>
+        /// <param name="piecePosition"></param>
+        public void CopyState(PieceEnums pieceType, PositionEnums piecePosition)
+        {
+            this.PieceType = pieceType;
+            this.PiecePosition = piecePosition;
         }
     }
 }

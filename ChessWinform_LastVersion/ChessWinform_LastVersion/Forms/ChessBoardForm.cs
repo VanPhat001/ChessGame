@@ -117,5 +117,26 @@ namespace Chess.Forms
             _gamePlay.Start();
             (sender as Button).Enabled = false;
         }
+
+        /// <summary>
+        /// previous state button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void pictureBoxUndo_Click(object sender, EventArgs e)
+        {
+            await _gamePlay.ChangePreviousState();
+        }
+
+        /// <summary>
+        /// next status button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureBoxNext_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("chua code :))");
+            //throw new Exception();
+        }
     }
 }

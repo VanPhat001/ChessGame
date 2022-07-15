@@ -15,6 +15,7 @@ namespace Chess.Objects
         private ChessPiece _cellSelect;
         private List<Point> _suggestList;
         private PositionEnums _turn;
+        private Stack<GameState> _state;
 
         public PositionEnums Turn => _turn;
 
@@ -43,6 +44,10 @@ namespace Chess.Objects
                     ChessPieceRule rule = new ChessPieceRule(_board);
                     if (rule.CanMove(_cellSelect.PieceLocation, value.PieceLocation, Turn))
                     {
+                        // save current state before change data
+                        // dont move this statement!!!
+                        AddState();
+
                         // check end game
                         if (value.PieceType == PieceEnums.King)
                         {
@@ -91,7 +96,7 @@ namespace Chess.Objects
                             {
                                 if (rule.CanMove(value.PieceLocation, new Point(c, r), value.PiecePosition))
                                 {
-                                    _board[r, c].Image = System.Drawing.Image.FromFile(@"Resource\PossibleMove.png");
+                                    _board[r, c].Image = Image.FromFile(@"Resource\PossibleMove.png");
                                     _suggestList.Add(new Point(c, r));
                                 }
                             }
@@ -108,7 +113,15 @@ namespace Chess.Objects
         private void ChangeTurn()
         {
             _turn = _turn == PositionEnums.Top ? PositionEnums.Bottom : PositionEnums.Top;
-            _window.textBoxShowTurn.Text = $"Turn of { (_turn == PositionEnums.Top ? "Black" : "White") } chess piece";
+            ShowTurnText();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ShowTurnText()
+        {
+            _window.textBoxShowTurn.Text = $"Turn of {(_turn == PositionEnums.Top ? "Black" : "White")} chess piece";
         }
 
         /// <summary>
@@ -122,6 +135,60 @@ namespace Chess.Objects
             _cellSelect = null;
             _suggestList = new List<Point>();
             _turn = PositionEnums.Top;
+            _state = new Stack<GameState>();
+
+            //AddState();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void AddState()
+        {
+            _state.Push(
+                new GameState(this._board, this.CellSelect, this._suggestList, this.Turn));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public async Task ChangePreviousState()
+        {
+            try
+            {
+                GameState state = _state.Pop();
+                await ReloadScreen(state);
+            }
+            catch {
+                System.Windows.Forms.MessageBox.Show("No have state to apply change");
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private async Task ReloadScreen(GameState state)
+        {
+            this._turn = state.Turn;
+            this._cellSelect = state.CellSelect;
+            ShowTurnText();
+
+            // reload board
+            for (int r = 0; r < 8; r++)
+            {
+                for (int c = 0; c < 8; c++)
+                {
+                    this._board[r, c].CopyState(state.PieceType[r, c], state.PiecePosition[r, c]);
+                }
+            }
+            await Task.Delay(1);
+
+            // copy and show suggest
+            foreach (var item in _suggestList)
+            {
+                this._board[item.Y, item.X].Image = Image.FromFile(@"Resource\PossibleMove.png");
+            }
+            this._suggestList = state.SuggestList;
         }
 
         /// <summary>

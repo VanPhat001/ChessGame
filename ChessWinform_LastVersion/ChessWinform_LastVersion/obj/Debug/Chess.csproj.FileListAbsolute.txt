@@ -12,3 +12,17 @@ C:\Users\Admin\Desktop\Test Folder\WinForm\WinForm\obj\Debug\Chess.csproj.Genera
 C:\Users\Admin\Desktop\Test Folder\WinForm\WinForm\obj\Debug\Chess.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Test Folder\WinForm\WinForm\obj\Debug\WinForm.exe
 C:\Users\Admin\Desktop\Test Folder\WinForm\WinForm\obj\Debug\WinForm.pdb
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\bin\Debug\WinForm.exe.config
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\bin\Debug\WinForm.exe
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\bin\Debug\WinForm.pdb
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.Forms.ChessBoardForm.resources
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.Forms.EvolutionForm.resources
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.Forms.MenuForm.resources
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.Forms.SettingForm.resources
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\WinForm.Properties.Resources.resources
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\WinForm.exe
+C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\WinForm.pdb

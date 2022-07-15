@@ -70,6 +70,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Objects\ChessPieceRule.cs" />
+    <Compile Include="Objects\GameState.cs" />
+    <Compile Include="Objects\PositionEnums.cs" />
+    <Compile Include="Objects\PieceEnums.cs" />
     <Compile Include="Objects\GamePlay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
