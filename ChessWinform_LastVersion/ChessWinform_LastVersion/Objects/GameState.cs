@@ -12,14 +12,12 @@ namespace Chess.Objects
     {
         private readonly PieceEnums[,] _pieceType;
         private readonly PositionEnums[,] _piecePosition;
-        private readonly ChessPiece _cellSelect;
-        private readonly List<Point> _suggestList;
+        private readonly ChessPiece _cellSelect;        
         private readonly PositionEnums _turn;
 
-        public GameState(Board board, ChessPiece cellSelect, List<Point> suggestList, PositionEnums turn)
+        public GameState(Board board, ChessPiece cellSelect, PositionEnums turn)
         {
             _cellSelect = cellSelect;
-            _suggestList = suggestList;
             _turn = turn;
 
             _pieceType = new PieceEnums[8, 8];
@@ -37,8 +35,6 @@ namespace Chess.Objects
 
 
         public ChessPiece CellSelect => _cellSelect;
-
-        public List<Point> SuggestList => _suggestList;
 
         public PositionEnums Turn => _turn;
 

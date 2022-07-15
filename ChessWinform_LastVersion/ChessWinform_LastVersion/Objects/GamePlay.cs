@@ -146,7 +146,7 @@ namespace Chess.Objects
         private void AddState()
         {
             _state.Push(
-                new GameState(this._board, this.CellSelect, this._suggestList, this.Turn));
+                new GameState(this._board, this.CellSelect, this.Turn));
         }
 
         /// <summary>
@@ -173,22 +173,17 @@ namespace Chess.Objects
             this._cellSelect = state.CellSelect;
             ShowTurnText();
 
-            // reload board
+            // reload board: update background image and clear suggest image
             for (int r = 0; r < 8; r++)
             {
                 for (int c = 0; c < 8; c++)
                 {
                     this._board[r, c].CopyState(state.PieceType[r, c], state.PiecePosition[r, c]);
+                    this._board[r, c].Image = null;
                 }
+                await Task.Delay(1);
             }
-            await Task.Delay(1);
-
-            // copy and show suggest
-            foreach (var item in _suggestList)
-            {
-                this._board[item.Y, item.X].Image = Image.FromFile(@"Resource\PossibleMove.png");
-            }
-            this._suggestList = state.SuggestList;
+            this._suggestList.Clear();
         }
 
         /// <summary>

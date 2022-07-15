@@ -26,3 +26,17 @@ C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Ch
 C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\Chess.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\WinForm.exe
 C:\Users\Admin\Desktop\Test Folder\WinForm\ChessWinform_LastVersion\obj\Debug\WinForm.pdb
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\bin\Debug\WinForm.exe.config
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\bin\Debug\WinForm.exe
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\bin\Debug\WinForm.pdb
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.csproj.AssemblyReference.cache
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.csproj.SuggestedBindingRedirects.cache
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.Forms.ChessBoardForm.resources
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.Forms.EvolutionForm.resources
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.Forms.MenuForm.resources
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.Forms.SettingForm.resources
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\WinForm.Properties.Resources.resources
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.csproj.GenerateResource.cache
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\WinForm.exe
+D:\drive data\_SOLUTIONS\ChessGame\ChessWinform_LastVersion\ChessWinform_LastVersion\obj\Debug\WinForm.pdb
