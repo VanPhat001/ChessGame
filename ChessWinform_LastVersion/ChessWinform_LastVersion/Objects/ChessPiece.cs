@@ -10,12 +10,15 @@ namespace Chess.Objects
 {
     public class ChessPiece : PictureBox
     {
+        #region fields
         private Point _pieceLocation;
         private Color _pieceBackColor;
         private PieceEnums _pieceType;
         private PositionEnums _piecePosition;
         private readonly Board _controlParent;
+        #endregion
 
+        #region properties
         public static readonly string BlackPieceFolderPath = @"Resource\black\";
         public static readonly string WhitePieceFolderPath = @"Resource\white\";
 
@@ -52,6 +55,8 @@ namespace Chess.Objects
                 ReloadImage();
             }
         }
+        #endregion
+
 
         /// <summary>
         /// 
@@ -74,6 +79,7 @@ namespace Chess.Objects
             Margin = new Padding(0);
         }
 
+        #region methods
         /// <summary>
         /// 
         /// </summary>
@@ -101,5 +107,6 @@ namespace Chess.Objects
             this.PieceType = pieceType;
             this.PiecePosition = piecePosition;
         }
+        #endregion
     }
 }

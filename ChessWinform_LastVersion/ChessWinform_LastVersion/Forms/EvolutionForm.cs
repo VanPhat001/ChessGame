@@ -14,10 +14,17 @@ namespace Chess.Forms
 
     public partial class EvolutionForm : Form
     {
+        #region fields
         private ImageList imgList;
         private int imgIndex;
+        #endregion
+
         public static readonly PieceEnums[] pieceEvolution = { PieceEnums.Rook, PieceEnums.Knight, PieceEnums.Bishop, PieceEnums.Queen };        
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="piecePosition"></param>
         public EvolutionForm(PositionEnums piecePosition)
         {
             InitializeComponent();
@@ -41,6 +48,20 @@ namespace Chess.Forms
             this.FormClosed += EvolutionForm_FormClosed;
         }
 
+
+        #region methods
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ShowImageSelect()
+        {
+            pictureBoxShowPiece.BackgroundImage = imgList.Images[imgIndex];
+            lblName.Text = pieceEvolution[imgIndex].ToString();
+        }
+        #endregion
+
+
+        #region events
         /// <summary>
         /// 
         /// </summary>
@@ -50,15 +71,6 @@ namespace Chess.Forms
         private void EvolutionForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Tag = pieceEvolution[imgIndex];
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void ShowImageSelect()
-        {
-            pictureBoxShowPiece.BackgroundImage = imgList.Images[imgIndex];
-            lblName.Text = pieceEvolution[imgIndex].ToString();
         }
 
         /// <summary>
@@ -92,5 +104,7 @@ namespace Chess.Forms
         {
             this.Close();
         }
+        #endregion
+
     }
 }

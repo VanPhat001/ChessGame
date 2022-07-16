@@ -15,13 +15,18 @@ namespace Chess.Forms
 {
     public partial class ChessBoardForm : Form
     {
+        #region fields
         private readonly SettingModel _model;
         private Board _board;
         private GamePlay _gamePlay;
         private bool _isClose;
+        #endregion
 
+
+        #region properties
         public SettingModel Model => _model;
         public bool IsClose { get => _isClose; private set => _isClose = value; }
+        #endregion
 
         /// <summary>
         /// 
@@ -38,13 +43,25 @@ namespace Chess.Forms
             IsClose = false;
 
             this.progressBarCountTime.Minimum = 0;
-            this.progressBarCountTime.Maximum = model.TimeOneTurn;
-            this.progressBarCountTime.Value = model.TimeOneTurn;
+            this.progressBarCountTime.Maximum = this.progressBarCountTime.Value = model.TimeOneTurn;
 
             this.FormClosed += ChessBoardForm_FormClosed;
         }
 
+        #region methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public async Task Start()
+        {
+            await _board.FillData();
+            await _board.SetPieceIntoBoard();
+        }
+        #endregion
 
+
+        #region events
         /// <summary>
         /// 
         /// </summary>
@@ -55,18 +72,6 @@ namespace Chess.Forms
             _gamePlay.StopClock();
             IsClose = true;
         }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public async Task Start()
-        {
-            await _board.FillData();
-            await _board.SetPieceIntoBoard();
-        }
-
 
         /// <summary>
         /// chagne image for picturebox when mouse enter area (undo arrow image)
@@ -143,5 +148,6 @@ namespace Chess.Forms
             await _gamePlay.ChangeNextState();
             //throw new Exception();
         }
+        #endregion
     }
 }

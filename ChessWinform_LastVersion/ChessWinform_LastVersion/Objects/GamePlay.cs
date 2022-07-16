@@ -11,6 +11,7 @@ namespace Chess.Objects
 {
     public class GamePlay
     {
+        #region fields
         private Board _board;
         private ChessBoardForm _window;
         private ChessPiece _cellSelect;
@@ -19,7 +20,9 @@ namespace Chess.Objects
         private Stack<GameState> _state;
         private Stack<GameState> _tempState;
         private Timer _clock;
+        #endregion
 
+        #region properties
         public PositionEnums Turn => _turn;
 
         public ChessPiece CellSelect
@@ -108,6 +111,7 @@ namespace Chess.Objects
                 #endregion
             }
         }
+        #endregion
 
         /// <summary>
         /// 
@@ -119,6 +123,8 @@ namespace Chess.Objects
             System.Windows.Forms.MessageBox.Show("Chessmate");
         }
 
+
+        #region methods
         /// <summary>
         /// 
         /// </summary>
@@ -263,7 +269,10 @@ namespace Chess.Objects
         {
             _clock.Stop();
         }
+        #endregion
 
+
+        #region events
         /// <summary>
         /// 
         /// </summary>
@@ -308,5 +317,6 @@ namespace Chess.Objects
         {
             CellSelect = sender as ChessPiece;
         }
+        #endregion
     }
 }

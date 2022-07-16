@@ -10,11 +10,20 @@ namespace Chess.Objects
 {
     public struct GameState
     {
+        #region fields
         private readonly PieceEnums[,] _pieceType;
         private readonly PositionEnums[,] _piecePosition;
         private readonly ChessPiece _cellSelect;        
         private readonly PositionEnums _turn;
+        #endregion
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="cellSelect"></param>
+        /// <param name="turn"></param>
         public GameState(Board board, ChessPiece cellSelect, PositionEnums turn)
         {
             _cellSelect = cellSelect;
@@ -32,8 +41,7 @@ namespace Chess.Objects
             }
         }
 
-
-
+        #region properties
         public ChessPiece CellSelect => _cellSelect;
 
         public PositionEnums Turn => _turn;
@@ -41,5 +49,6 @@ namespace Chess.Objects
         public PieceEnums[,] PieceType => _pieceType;
 
         public PositionEnums[,] PiecePosition => _piecePosition;
+        #endregion
     }
 }

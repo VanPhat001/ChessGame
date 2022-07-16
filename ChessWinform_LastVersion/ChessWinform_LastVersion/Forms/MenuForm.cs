@@ -16,7 +16,9 @@ namespace Chess.Forms
     {
         private readonly SettingModel _settingModel;        
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public MenuForm()
         {
             InitializeComponent();
@@ -30,6 +32,8 @@ namespace Chess.Forms
             };
         }
 
+
+        #region events
         /// <summary>
         /// open chessboard form and play
         /// </summary>
@@ -77,5 +81,6 @@ namespace Chess.Forms
         {
             this.Close();
         }
+        #endregion
     }
 }

@@ -10,11 +10,13 @@ namespace Chess.Objects
 {
     public class Board
     {
+        #region fields
         private ChessBoardForm _window;
         private ChessPiece[,] _cells;
         private event EventHandler _cellClick;
+        #endregion
 
-
+        #region properties
         public event EventHandler CellClick
         {
             add => _cellClick += value;
@@ -34,6 +36,7 @@ namespace Chess.Objects
             get => _cells[row, col];
             private set => _cells[row, col] = value;
         }
+        #endregion
 
 
         /// <summary>
@@ -46,7 +49,7 @@ namespace Chess.Objects
             _cells = new ChessPiece[8, 8];
         }
 
-
+        #region methods
         /// <summary>
         /// 
         /// </summary>
@@ -72,15 +75,13 @@ namespace Chess.Objects
             _cells[7, 7].PieceType = PieceEnums.Rook;
             await Task.Delay(5);
 
-
+            // test data
             //_cells[4, 0].PieceType = PieceEnums.Rook;
             //_cells[3, 4].PieceType = PieceEnums.Bishop;
             //_cells[3, 4].PiecePosition = PositionEnums.Bottom;
             //_cells[5, 2].PieceType = PieceEnums.Pawn;
             //_cells[2, 2].PieceType = PieceEnums.Pawn;
             //_cells[2, 2].PiecePosition = PositionEnums.Bottom;
-
-
 
             for (int x = 0; x < 8; x++)
             {
@@ -114,13 +115,12 @@ namespace Chess.Objects
         /// clear all controls in board
         /// </summary>
         public void ClearData()
-        {
-            ref FlowLayoutPanel pnl = ref _window.pnlBoard;
-            pnl.Controls.Clear();
+        {            
+            _window.pnlBoard.Controls.Clear();
         }
 
         /// <summary>
-        /// fill board with chesspiece 
+        /// fill board with chess piece 
         /// </summary>
         public async Task FillData()
         {
@@ -165,19 +165,23 @@ namespace Chess.Objects
         /// 
         /// </summary>
         /// <param name="sender"></param>
+        private void OnCellClick(object sender)
+        {
+            this._cellClick?.Invoke(sender, new EventArgs());
+        }
+        #endregion
+
+
+        #region events
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Cell_Click(object sender, EventArgs e)
         {
             OnCellClick(sender);
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        private void OnCellClick(object sender)
-        {
-            this._cellClick?.Invoke(sender, new EventArgs());
-        }
+        #endregion
     }
 }

@@ -9,7 +9,10 @@ namespace Chess.Objects
 {
     public class ChessPieceRule
     {
+        #region fields
         private Board _board;
+        #endregion
+
 
         /// <summary>
         /// 
@@ -20,6 +23,7 @@ namespace Chess.Objects
             _board = board;
         }
 
+        #region methods
         /// <summary>
         /// 
         /// </summary>
@@ -244,5 +248,7 @@ namespace Chess.Objects
 
             return true;
         }
+        #endregion
+
     }
 }

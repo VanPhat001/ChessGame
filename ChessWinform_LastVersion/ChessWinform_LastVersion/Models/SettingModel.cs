@@ -6,15 +6,22 @@ namespace Chess.Models
 {
     public class SettingModel : INotifyPropertyChanged
     {
+        #region fields
         private Color _selectBackColor;
         private Color _firstBackColor;
         private Color _secondBackColor;
         private int _timeOneTurn;
+        #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
         public SettingModel()
         {
         }
 
+
+        #region properties
         public Color FirstBackColor
         {
             get => _firstBackColor;
@@ -51,6 +58,8 @@ namespace Chess.Models
                 OnPropertyChanged();
             }
         }
+        #endregion
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
