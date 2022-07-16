@@ -133,9 +133,9 @@ namespace Chess.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pictureBoxNext_Click(object sender, EventArgs e)
+        private async void pictureBoxNext_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("chua code :))");
+            await _gamePlay.ChangeNextState();
             //throw new Exception();
         }
     }

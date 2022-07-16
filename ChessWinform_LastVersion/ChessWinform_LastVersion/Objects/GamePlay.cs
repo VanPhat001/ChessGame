@@ -16,6 +16,7 @@ namespace Chess.Objects
         private List<Point> _suggestList;
         private PositionEnums _turn;
         private Stack<GameState> _state;
+        private Stack<GameState> _tempState;
 
         public PositionEnums Turn => _turn;
 
@@ -136,6 +137,7 @@ namespace Chess.Objects
             _suggestList = new List<Point>();
             _turn = PositionEnums.Top;
             _state = new Stack<GameState>();
+            _tempState = new Stack<GameState>();
 
             //AddState();
         }
@@ -147,6 +149,7 @@ namespace Chess.Objects
         {
             _state.Push(
                 new GameState(this._board, this.CellSelect, this.Turn));
+            _tempState.Clear();
         }
 
         /// <summary>
@@ -158,8 +161,28 @@ namespace Chess.Objects
             {
                 GameState state = _state.Pop();
                 await ReloadScreen(state);
+                _tempState.Push(state);
             }
-            catch {
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("No have state to apply change");
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public async Task ChangeNextState()
+        {
+            try
+            {
+                GameState state = _tempState.Pop();
+                await ReloadScreen(state);
+                _state.Push(state);
+            }
+            catch
+            {
                 System.Windows.Forms.MessageBox.Show("No have state to apply change");
             }
         }
