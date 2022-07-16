@@ -26,6 +26,7 @@ namespace Chess.Forms
                 FirstBackColor = System.Drawing.Color.White,
                 SecondBackColor = System.Drawing.Color.PowderBlue,
                 SelectBackColor = System.Drawing.Color.LightSlateGray,
+                TimeOneTurn = 7500
             };
         }
 

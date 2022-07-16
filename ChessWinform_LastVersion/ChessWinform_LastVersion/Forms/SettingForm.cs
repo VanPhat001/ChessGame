@@ -14,8 +14,12 @@ namespace Chess.Forms
     public partial class SettingForm : Form
     {
         private SettingModel _model;
-        ColorDialog _colorDialog;
+        private ColorDialog _colorDialog;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
         public SettingForm(SettingModel model)
         {
             InitializeComponent();
@@ -38,7 +42,7 @@ namespace Chess.Forms
             // binding [trackBarTime.Value <=> model.TimeOneTurn]
             trackBarTime.DataBindings.Add(
                 nameof(trackBarTime.Value), model, nameof(model.TimeOneTurn), true, DataSourceUpdateMode.OnPropertyChanged);
-
+                        
             // binding [numericUpDownCurrentValue.Value <=> model.TimeOneTurn]
             numericUpDownCurrentValue.DataBindings.Add(
                 nameof(numericUpDownCurrentValue.Value), model, nameof(model.TimeOneTurn), true, DataSourceUpdateMode.OnPropertyChanged);
@@ -56,20 +60,27 @@ namespace Chess.Forms
                 nameof(lblMaxValue.Text), trackBarTime, nameof(trackBarTime.Maximum));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox_Click_ChangeBackColor(object sender, EventArgs e)
         {
-
             PictureBox picture = sender as PictureBox;
             _colorDialog.Color = picture.BackColor;
 
             if (_colorDialog.ShowDialog() == DialogResult.OK)
             {
                 picture.BackColor = _colorDialog.Color;
-            }
-
-            
+            }            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -35,7 +35,11 @@ namespace Chess.Forms
             _board = new Board(this);
             _board.IsEnableBoard = false;
             _gamePlay = new GamePlay(this, _board);
-            IsClose = false;           
+            IsClose = false;
+
+            this.progressBarCountTime.Minimum = 0;
+            this.progressBarCountTime.Maximum = model.TimeOneTurn;
+            this.progressBarCountTime.Value = model.TimeOneTurn;
 
             this.FormClosed += ChessBoardForm_FormClosed;
         }
@@ -48,6 +52,7 @@ namespace Chess.Forms
         /// <param name="e"></param>
         private void ChessBoardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            _gamePlay.StopClock();
             IsClose = true;
         }
 

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Chess.Forms;
 
 namespace Chess.Objects
@@ -17,6 +18,7 @@ namespace Chess.Objects
         private PositionEnums _turn;
         private Stack<GameState> _state;
         private Stack<GameState> _tempState;
+        private Timer _clock;
 
         public PositionEnums Turn => _turn;
 
@@ -52,8 +54,7 @@ namespace Chess.Objects
                         // check end game
                         if (value.PieceType == PieceEnums.King)
                         {
-                            System.Windows.Forms.MessageBox.Show("Chessmate");
-                            _window.pnlBoard.Enabled = false;
+                            ChessmateAction();
                             return;
                         }
 
@@ -111,8 +112,19 @@ namespace Chess.Objects
         /// <summary>
         /// 
         /// </summary>
+        private void ChessmateAction()
+        {
+            StopClock();            
+            _window.pnlBoard.Enabled = false;
+            System.Windows.Forms.MessageBox.Show("Chessmate");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void ChangeTurn()
         {
+            ResetClockTime();
             _turn = _turn == PositionEnums.Top ? PositionEnums.Bottom : PositionEnums.Top;
             ShowTurnText();
         }
@@ -138,6 +150,10 @@ namespace Chess.Objects
             _turn = PositionEnums.Top;
             _state = new Stack<GameState>();
             _tempState = new Stack<GameState>();
+
+            _clock = new Timer();
+            _clock.Interval = _window.progressBarCountTime.Step = 200;
+            _clock.Tick += TimerTick_ChangeClock;
 
             //AddState();
         }
@@ -218,6 +234,55 @@ namespace Chess.Objects
             _suggestList.Clear();
             _board.CellClick += _board_CellClick;
             _window.KeyDown += _window_KeyDown;
+
+            StartClock();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void StartClock()
+        {
+            _clock.Start();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ResetClockTime()
+        {
+            StopClock();
+            _window.progressBarCountTime.Value = _window.progressBarCountTime.Maximum;
+            StartClock();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void StopClock()
+        {
+            _clock.Stop();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void TimerTick_ChangeClock(object sender, EventArgs e)
+        {
+            int newProgressValue = _window.progressBarCountTime.Value - _window.progressBarCountTime.Step;
+
+            if (newProgressValue <= 0)
+            {
+                _window.progressBarCountTime.Value = 0;
+                ChessmateAction();
+            }
+            else
+            {
+                _window.progressBarCountTime.Value = newProgressValue;
+            }           
         }
 
 

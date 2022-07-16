@@ -162,17 +162,39 @@
             // numericUpDownCurrentValue
             // 
             this.numericUpDownCurrentValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownCurrentValue.Location = new System.Drawing.Point(703, 27);
+            this.numericUpDownCurrentValue.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDownCurrentValue.Location = new System.Drawing.Point(668, 27);
+            this.numericUpDownCurrentValue.Maximum = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.numericUpDownCurrentValue.Minimum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
             this.numericUpDownCurrentValue.Name = "numericUpDownCurrentValue";
-            this.numericUpDownCurrentValue.Size = new System.Drawing.Size(57, 32);
+            this.numericUpDownCurrentValue.Size = new System.Drawing.Size(92, 32);
             this.numericUpDownCurrentValue.TabIndex = 6;
             this.numericUpDownCurrentValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownCurrentValue.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
             // 
             // lblMaxValue
             // 
             this.lblMaxValue.AutoSize = true;
+            this.lblMaxValue.BackColor = System.Drawing.Color.Transparent;
             this.lblMaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxValue.Location = new System.Drawing.Point(790, 29);
+            this.lblMaxValue.Location = new System.Drawing.Point(773, 29);
+            this.lblMaxValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblMaxValue.Name = "lblMaxValue";
             this.lblMaxValue.Size = new System.Drawing.Size(53, 25);
             this.lblMaxValue.TabIndex = 5;
@@ -182,7 +204,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(766, 29);
+            this.label5.Location = new System.Drawing.Point(758, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 25);
             this.label5.TabIndex = 4;
@@ -190,11 +212,17 @@
             // 
             // trackBarTime
             // 
+            this.trackBarTime.LargeChange = 500;
             this.trackBarTime.Location = new System.Drawing.Point(194, 20);
+            this.trackBarTime.Maximum = 60000;
+            this.trackBarTime.Minimum = 3000;
             this.trackBarTime.Name = "trackBarTime";
-            this.trackBarTime.Size = new System.Drawing.Size(503, 45);
+            this.trackBarTime.Size = new System.Drawing.Size(468, 45);
+            this.trackBarTime.SmallChange = 500;
             this.trackBarTime.TabIndex = 2;
+            this.trackBarTime.TickFrequency = 1000;
             this.trackBarTime.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarTime.Value = 10000;
             // 
             // label4
             // 

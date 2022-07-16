@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace Chess.Models
 {
@@ -25,7 +21,7 @@ namespace Chess.Models
             set
             {
                 _firstBackColor = value;
-                OnPropertyChanged(nameof(FirstBackColor));
+                OnPropertyChanged();
             }
         }
         public Color SecondBackColor
@@ -34,7 +30,7 @@ namespace Chess.Models
             set
             {
                 _secondBackColor = value;
-                OnPropertyChanged(nameof(SecondBackColor));
+                OnPropertyChanged();
             }
         }
         public Color SelectBackColor
@@ -43,7 +39,7 @@ namespace Chess.Models
             set
             {
                 _selectBackColor = value;
-                OnPropertyChanged(nameof(SelectBackColor));
+                OnPropertyChanged();
             }
         }
         public int TimeOneTurn
@@ -52,13 +48,13 @@ namespace Chess.Models
             set
             {
                 _timeOneTurn = value;
-                OnPropertyChanged(nameof(TimeOneTurn));
+                OnPropertyChanged();
             }
         }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
+        private void OnPropertyChanged([CallerMemberName] string propName = "")
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }

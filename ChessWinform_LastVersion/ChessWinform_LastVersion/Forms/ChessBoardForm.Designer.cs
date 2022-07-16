@@ -105,7 +105,6 @@
             this.progressBarCountTime.Location = new System.Drawing.Point(3, 328);
             this.progressBarCountTime.Name = "progressBarCountTime";
             this.progressBarCountTime.Size = new System.Drawing.Size(303, 40);
-            this.progressBarCountTime.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarCountTime.TabIndex = 1;
             // 
             // btnStart
