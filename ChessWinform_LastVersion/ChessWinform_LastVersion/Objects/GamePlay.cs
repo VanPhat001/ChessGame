@@ -241,6 +241,7 @@ namespace Chess.Objects
             _board.CellClick += _board_CellClick;
             _window.KeyDown += _window_KeyDown;
 
+            ShowTurnText();
             StartClock();
         }
 
