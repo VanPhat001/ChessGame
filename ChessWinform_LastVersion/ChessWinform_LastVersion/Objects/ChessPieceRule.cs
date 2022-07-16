@@ -156,9 +156,53 @@ namespace Chess.Objects
         /// <returns></returns>
         private bool CheckPawnMove(Point start, Point end, ChessPiece pieceFrom, ChessPiece pieceTo)
         {
+            #region last version
+#if false
+
             return pieceFrom.PiecePosition == PositionEnums.Top
                 ? CheckPawnTop(start, end, pieceTo)
                 : CheckPawnBottom(start, end, pieceTo);
+#endif
+            #endregion
+
+            #region new version
+#if true
+            return pieceFrom.PiecePosition == PositionEnums.Top
+                ? CheckPawnMove_(start, end, pieceTo, 2, 1, 2, 1)
+                : CheckPawnMove_(start, end, pieceTo, -2, 6, 5, -1);
+#endif
+            #endregion
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        private bool CheckPawnMove_(Point start, Point end, ChessPiece pieceTo, params int[] parameters)
+        {
+            if (end.Y - start.Y == parameters[0]
+                && start.Y == parameters[1]
+                && start.X == end.X
+                && pieceTo.PieceType == PieceEnums.Empty)
+            {
+                return _board[parameters[2], start.X].PieceType == PieceEnums.Empty;
+            }
+            else if (end.Y - start.Y == parameters[3])
+            {
+                if (end.X - start.X == 0)
+                {
+                    return pieceTo.PieceType == PieceEnums.Empty;
+                }
+                else if (Math.Abs(end.X - start.X) <= 1)
+                {
+                    return pieceTo.PieceType != PieceEnums.Empty;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>

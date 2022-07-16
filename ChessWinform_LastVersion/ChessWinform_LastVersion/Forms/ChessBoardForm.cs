@@ -43,7 +43,7 @@ namespace Chess.Forms
             IsClose = false;
 
             this.progressBarCountTime.Minimum = 0;
-            this.progressBarCountTime.Maximum = this.progressBarCountTime.Value = model.TimeOneTurn;
+            this.progressBarCountTime.Value = this.progressBarCountTime.Maximum = model.TimeOneTurn;
 
             this.FormClosed += ChessBoardForm_FormClosed;
         }

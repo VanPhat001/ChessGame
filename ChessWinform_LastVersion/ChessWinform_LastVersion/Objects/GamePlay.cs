@@ -153,7 +153,7 @@ namespace Chess.Objects
             _board = board;
             _cellSelect = null;
             _suggestList = new List<Point>();
-            _turn = PositionEnums.Top;
+            _turn = PositionEnums.Bottom;
             _state = new Stack<GameState>();
             _tempState = new Stack<GameState>();
 

@@ -62,7 +62,7 @@
             this.panel2.Controls.Add(this.pictureBoxSelectPiece);
             this.panel2.Location = new System.Drawing.Point(12, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(843, 86);
+            this.panel2.Size = new System.Drawing.Size(916, 86);
             this.panel2.TabIndex = 2;
             // 
             // label2
@@ -80,7 +80,7 @@
             this.pictureBoxSelectPiece.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxSelectPiece.BackgroundImage")));
             this.pictureBoxSelectPiece.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxSelectPiece.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxSelectPiece.Location = new System.Drawing.Point(763, 0);
+            this.pictureBoxSelectPiece.Location = new System.Drawing.Point(836, 0);
             this.pictureBoxSelectPiece.Name = "pictureBoxSelectPiece";
             this.pictureBoxSelectPiece.Size = new System.Drawing.Size(80, 86);
             this.pictureBoxSelectPiece.TabIndex = 0;
@@ -93,7 +93,7 @@
             this.panel1.Controls.Add(this.pictureBoxFirstCell);
             this.panel1.Location = new System.Drawing.Point(12, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(843, 86);
+            this.panel1.Size = new System.Drawing.Size(916, 86);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -110,7 +110,7 @@
             // 
             this.pictureBoxFirstCell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxFirstCell.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxFirstCell.Location = new System.Drawing.Point(763, 0);
+            this.pictureBoxFirstCell.Location = new System.Drawing.Point(836, 0);
             this.pictureBoxFirstCell.Name = "pictureBoxFirstCell";
             this.pictureBoxFirstCell.Size = new System.Drawing.Size(80, 86);
             this.pictureBoxFirstCell.TabIndex = 0;
@@ -123,7 +123,7 @@
             this.panel3.Controls.Add(this.pictureBoxSecondCell);
             this.panel3.Location = new System.Drawing.Point(12, 212);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(843, 86);
+            this.panel3.Size = new System.Drawing.Size(916, 86);
             this.panel3.TabIndex = 4;
             // 
             // label3
@@ -140,7 +140,7 @@
             // 
             this.pictureBoxSecondCell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxSecondCell.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxSecondCell.Location = new System.Drawing.Point(763, 0);
+            this.pictureBoxSecondCell.Location = new System.Drawing.Point(836, 0);
             this.pictureBoxSecondCell.Name = "pictureBoxSecondCell";
             this.pictureBoxSecondCell.Size = new System.Drawing.Size(80, 86);
             this.pictureBoxSecondCell.TabIndex = 0;
@@ -156,7 +156,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(12, 304);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(843, 86);
+            this.panel4.Size = new System.Drawing.Size(916, 86);
             this.panel4.TabIndex = 5;
             // 
             // numericUpDownCurrentValue
@@ -167,9 +167,9 @@
             0,
             0,
             0});
-            this.numericUpDownCurrentValue.Location = new System.Drawing.Point(668, 27);
+            this.numericUpDownCurrentValue.Location = new System.Drawing.Point(702, 27);
             this.numericUpDownCurrentValue.Maximum = new decimal(new int[] {
-            60000,
+            180000,
             0,
             0,
             0});
@@ -179,7 +179,7 @@
             0,
             0});
             this.numericUpDownCurrentValue.Name = "numericUpDownCurrentValue";
-            this.numericUpDownCurrentValue.Size = new System.Drawing.Size(92, 32);
+            this.numericUpDownCurrentValue.Size = new System.Drawing.Size(115, 32);
             this.numericUpDownCurrentValue.TabIndex = 6;
             this.numericUpDownCurrentValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentValue.Value = new decimal(new int[] {
@@ -193,7 +193,7 @@
             this.lblMaxValue.AutoSize = true;
             this.lblMaxValue.BackColor = System.Drawing.Color.Transparent;
             this.lblMaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxValue.Location = new System.Drawing.Point(773, 29);
+            this.lblMaxValue.Location = new System.Drawing.Point(828, 29);
             this.lblMaxValue.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblMaxValue.Name = "lblMaxValue";
             this.lblMaxValue.Size = new System.Drawing.Size(53, 25);
@@ -204,7 +204,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(758, 29);
+            this.label5.Location = new System.Drawing.Point(816, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 25);
             this.label5.TabIndex = 4;
@@ -212,15 +212,15 @@
             // 
             // trackBarTime
             // 
-            this.trackBarTime.LargeChange = 500;
+            this.trackBarTime.LargeChange = 2000;
             this.trackBarTime.Location = new System.Drawing.Point(194, 20);
-            this.trackBarTime.Maximum = 60000;
+            this.trackBarTime.Maximum = 180000;
             this.trackBarTime.Minimum = 3000;
             this.trackBarTime.Name = "trackBarTime";
-            this.trackBarTime.Size = new System.Drawing.Size(468, 45);
+            this.trackBarTime.Size = new System.Drawing.Size(502, 45);
             this.trackBarTime.SmallChange = 500;
             this.trackBarTime.TabIndex = 2;
-            this.trackBarTime.TickFrequency = 1000;
+            this.trackBarTime.TickFrequency = 10000;
             this.trackBarTime.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBarTime.Value = 10000;
             // 
@@ -242,7 +242,7 @@
             this.button1.Location = new System.Drawing.Point(0, 420);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(867, 53);
+            this.button1.Size = new System.Drawing.Size(940, 53);
             this.button1.TabIndex = 6;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 473);
+            this.ClientSize = new System.Drawing.Size(940, 473);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
